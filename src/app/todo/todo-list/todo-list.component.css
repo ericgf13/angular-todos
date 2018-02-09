@@ -1,0 +1,4 @@
+/* fix checbkox bug */
+mat-cell {
+    overflow: visible;
+}

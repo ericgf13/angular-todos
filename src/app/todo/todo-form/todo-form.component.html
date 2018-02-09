@@ -1,0 +1,17 @@
+<mat-card style="margin-bottom: 20px">
+  <mat-card-title>New TODO</mat-card-title>
+
+  <form (ngSubmit)="submitTodo()">
+    <mat-form-field>
+      <input matInput placeholder="Action" [(ngModel)]="todo.action" name="action">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="todo.dueDateFormatted" name="dueDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" [disabled]="!todo.action">Save</button>
+  </form>
+</mat-card>
